@@ -1,0 +1,50 @@
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+spark-shell
+val order=sc.textFile("/user/hive/warehouse/hdp_datalake.db/orderdetails/part-m-00000")
+order.first
+order.map(_.split("\u0001")).first
+#Read by column names from RDD??
+
+case class orderline(ordernumber:Int,
+productcode:String,quantityordered:Int,priceeach:Float,orderlinenumber:Int)
+
+// Map every element with case class 
+val order=sc.textFile("/user/hive/warehouse/hdp_datalake.db/orderdetails/")
+.map(x=>{ val row=x.split("\u0001")
+orderline(row(0).toInt,row(1),row(2).toInt,row(3).toFloat,row(4).toInt)
+})
+//order: org.apache.spark.rdd.RDD[orderline] = MapPartitionsRDD[7] at map at <console>:27
+
+order.map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).first
+
+order.filter(row=>row.ordernumber==10425).map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).foreach(println)
+//pairRDD functions
+//reduce by key and group by key
+
+scala> order.filter(row=>row.ordernumber==10425).map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).reduceByKey(_+_).first
+res11: (Int, Float) = (10425,41623.44)
+
+scala> order.filter(row=>row.ordernumber==10425).map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).reduceByKey((x,y)=> x+y ).first
+res12: (Int, Float) = (10425,41623.44)
+
+scala> order.filter(row=>row.ordernumber==10425).map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).groupByKey().first
+res13: (Int, Iterable[Float]) = (10425,CompactBuffer(4996.62, 3167.67, 4126.08, 4477.16, 923.77997, 3935.4001, 4094.8801, 2956.25, 6261.71, 986.42, 3435.3901, 553.52, 1708.5599))
+
+scala> order.filter(row=>row.ordernumber==10425).map(row=>(row.ordernumber,row.priceeach*row.quantityordered)).groupByKey().map(x=>(x._1,x._2.sum)).first
+res14: (Int, Float) = (10425,41623.44)
+
+2553  spark.read.table("orderdetails").first
+2554  spark.read.table("hdp_datalake.orderdetails").first
+2555  spark.read.table("hdp_datalake.orderdetails").printSchema
+2556  spark.sql("select * from hdp_datalake.orderdetails").printSchema
+
+orderDF.groupBy("ordernumber").agg(sum("priceeach")).first
+orderDF.groupBy("ordernumber").sum("priceeach").first
+
+orderDF.groupBy("ordernumber").agg(sum("priceeach")*sum("quantityordered")).where("ordernumber=10425").first
+
+
+
+
+
+

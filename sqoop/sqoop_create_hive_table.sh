@@ -34,6 +34,7 @@ sqoop import  \
       --connect jdbc:mysql://localhost:3306/$mysql_dbname?zeroDateTimeBehavior=convertToNull \
       --username $mysql_user \
       --password $mysql_password \
+--hive-delims-replacement "," \
       --hive-import \
       --create-hive-table \
       --hive-database $2 \
