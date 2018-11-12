@@ -1,0 +1,72 @@
+Office wise total sales made::
+
+Query::  quantityOrdered, sales for each orderNumber
+select orderNumber,  sum(quantityOrdered),sum(quantityOrdered*priceEach) as totalAmount   from orderdetails where orderNumber=10100 group by orderNumber;
+
+For every Customer what is the sales amount::
+orderdetails, order 
+
+------------------------------------------
+hive (hdpdlake)> desc orders;
+OK
+col_name        data_type       comment
+ordernumber             int
+orderdate               string
+requireddate            string
+shippeddate             string
+status                  string
+comments                string
+customernumber          int
+
+hive (hdpdlake)> desc orderdetails;
+OK
+col_name        data_type       comment
+ordernumber             int
+productcode             string
+quantityordered         int
+priceeach               double
+orderlinenumber         int
+
+
+--------------------------------------------
+1) get the data from csv file in to RDD: (Local and HDFS)
+orders, order details , join aggregate store the result into row formats.
+(we can get data from row formats) 
+
+1.1) Implement as Standalone application.. and submit using spark submit utility
+
+2) get the data from RDBMS into DF
+
+val orderdetails_df= spark.read.format("jdbc").
+option("url", "jdbc:mysql://localhost:3306/classicmodels").
+option("driver", "com.mysql.jdbc.Driver").
+option("dbtable", "orderdetails").
+option("user", "root").
+option("password", "root").
+load()
+orderdetails_df.show
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+spark-shell --jars /home/dorababugjntup/YARN/hive/lib/mysql-connector-java-8.0.11.jar
+
+
+3) Get the data from csv file into DF
+To read the data from hdfs and hive, you need hadoop_conf_dir and hive_home environmental properties.
+
+
+4) get the data from hive table into DF (we can use SparkSession Read API, table or use sql directly)
+metastore -> integrate hivemetastore with Spark -> 
+
+
+5) Convert the DF into DS.
+
+----------------------------------------------
+Interview Question: 13july 2018
+pid,price,date
+1,1000,jan1
+1,1000,jan2
+1,1100,jan2
+2,200,jan2
+
+pid,price,date, price1,date1, price2,date2
+1,1000,jan1,1000,jan2,1100,jan2
+

@@ -1,0 +1,40 @@
+Hadoop configiration location 
+ls -l /home/dorababugjntup/YARN/hadoop2/etc/hadoop/| grep site.xml
+ 1465  cat core-site.xml
+ 1466  cat /home/dorababugjntup/YARN/hadoop2/etc/hadoop/core-site.xml
+ we have namenode address fs.defaultFS - hdfs://localcost:9000
+ 1473  hdfs dfs -ls /hdpdlake/orderdetails
+ 1474  hdfs dfs -cat /hdpdlake/orderdetails/*
+ 1475  hdfs dfs -get /hdpdlake/orderdetails localdst
+
+ 1477  cd orderdetails
+ 
+ 1480  vi part-m-00000 -> hive default delimiter while we import data using sqoop 
+ 1481  history
+-----------------
+val orderline=spark.read.textFile("/classicmodels/orderdetails")
+this will give DF, like a table...
+to store table , and columns it need metastore -> inmemory metastore...
+
+To get RDD
+val orderline_rdd=spark.sparkContext.textFile("/classicmodels/orderdetails")
+select orderNumber,  sum(quantityOrdered),sum(quantityOrdered*priceEach) as totalAmount   from orderdetails where orderNumber=10100 group by orderNumber;
+order details
+ordernumber             int
+productcode             string
+quantityordered         int
+priceeach               double
+orderlinenumber         int
+
+line => (line.split(",")(0),(
+								line.split(",")(2)*line.split(",")(3),line.split(",")(1)
+								)
+	     )
+
+line => (line.split(",")(0),	line.split(",")(2)*line.split(",")(3)
+		)
+	     
+
+
+
+

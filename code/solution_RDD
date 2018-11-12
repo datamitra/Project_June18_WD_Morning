@@ -1,0 +1,147 @@
+1) Load data into RDDs and join the data sets, store data into a file CSV file.
+
+cust number , name, order amount :::
+PART 1:::orderdetails -> group by ordernumber , amount per order
+PART 2:::orders -> custnumber and order number
+PART 3:::join and get custnumber, amount per order 
+
+customer detail -> cust number, customer name 
+PART 4:::join to get final data 
+store PART 4 into text:: 
+---------------------------------
+hdfs dfs -mkdir /ip/   -> data folder
+mkdir ~/ip/
+wget https://github.com/datamitra/notes/raw/master/project/data/classicmodels/orderdetails/part-m-00000
+mv part-m-00000 ~/ip/orderdetails
+
+wget https://github.com/datamitra/notes/raw/master/project/data/classicmodels/orders/part-m-00000
+mv part-m-00000 ~/ip/orders
+
+wget https://github.com/datamitra/notes/raw/master/project/data/classicmodels/customers/part-m-00000
+mv part-m-00000 ~/ip/customers
+
+head ~/ip/orderdetails
+head ~/ip/orders
+head ~/ip/customers
+
+hive (hdpdlake)> desc orderdetails;
+OK
+col_name        data_type       comment
+ordernumber             int
+productcode             string
+quantityordered         int
+priceeach               double
+orderlinenumber         int
+
+hive (hdpdlake)> desc orders;
+OK
+col_name        data_type       comment
+ordernumber             int
+orderdate               string
+requireddate            string
+shippeddate             string
+status                  string
+comments                string
+customernumber          int
+
+----------------------------------------------------------------------
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+
+//orderdetailsRDD.reduceByKey((x,y)=>x+y,1).saveAsTextFile("ol_res")
+orderdetailsRDD.reduceByKey((x,y)=>x+y).filter(x=>x._1 == "10110").first
+select ordernumber,sum(quantityordered*priceeach) from classicmodels.orderdetails where ordernumber=10110 group by ordernumber
+
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)  
+ordernumber and what is its value .
+/*****
+case class ordervalue(odernumber:String,amount:Float)
+Access fields based on column name instead of column position
+Instead of RDD tuples,we are using RDD of Caseclass objects
+ val partx=orderdetailsRDD.reduceByKey((x,y)=>x+y,1).map(x=>ordervalue(x._1,x._2))
+ partx.map(x=>x.odernumber).first
+******/
+
+you can use, delimiter as \",\" instead of , to get last value.
+val part2=sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+ordernumber , customer number
+
+
+part 2 contanis ordernumber, custonermumber
+part 1 ordernum,amount -> after join (ordernum,(custno,amount)) 
+
+part2.join(part1).take(10) 
+part2.join(part1).sortBy(x=>x._2._1).take(10)  -> sorted based on custno.,
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+
+select o.customernumber,count(o.orderNumber) no_of_orders, sum(quantityordered*priceeach) amount_per_customer
+from orders o 
+left join orderdetails od on o.orderNumber=od.orderNumber
+where customernumber=201
+group by customernumber;
+
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+
+val customerRDD=sc.textFile("customers").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+ 
+
+part3.join(customerRDD).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1)).saveAsTextFile("customer_order_amount")
+
+
+select o.customernumber,count(o.orderNumber) no_of_orders, sum(quantityordered*priceeach) amount_per_customer, c.customerName
+from orders o 
+left join orderdetails od on o.orderNumber=od.orderNumber
+left join customers c on o.customerNumber=c.customerNumber
+where c.customernumber=202
+group by customernumber;
+
+-------------------------------------------
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+
+val part2=sc.textFile("orders").
+map(x=>{val y=x.replace("\"",""); 
+(y.split(",")(0),y.reverse.split(",")(0).reverse)
+   })
+
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+
+val customerRDD=sc.textFile("customers").
+map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+ 
+val part4=part3.join(customerRDD).
+map(line => (line._1,line._2._2, line._2._1))
+
+
+part4.saveAsTextFile("customer_order_amount1")
+
+
+
+
+
+
+
+-------------------------------------------------
+
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
+spark-submit --master yarn \
+--deploy-mode client \
+--conf spark.executor.memory=1g \
+--conf spark.master=yarn \
+--conf spark.submit.deployMode=client \
+--class HelloWorld \
+--name "customer_order_amount" \
+--driver-memory 3g \
+--executor-memory 3g \
+--driver-cores 1 \
+--executor-cores 1 \
+--num-executors 2 \
+~/Desktop/Q1.jar /ip/orderdetails /ip/orders /ip/customers /Q1_Out
+ 
+ 

@@ -1,0 +1,42 @@
+Completed tasks:
+Sqoop  Import into DataLake - Reusable Script
+
+Date 9/July/2018
+Reconciliation step to check Mysql and Hive count
+------------------------------
+104.196.40.14:3306
+roo 
+root
+hive Service -> hive --service hiveServer2
+Connect via 104.196.40.14:10000 using beeline(JDBC client). or Remote login into edge node and access hive using "hive"I thrift client)
+-------------------------------
+Today: Process Data using RDD,DF(DSL) , Spark SQL
+i) Check hive table data delimiters and File Format
+
+which git
+git clone https://github.com/datamitra/notes.git
+mv  project notes/
+git add *
+git commit -m "first commit"
+git push
+git rm -r to remove  a folder
+https://help.rallydev.com - provide requirement - user stories 
+Agile methodology -> Sprint ->Scrum calls, Scrum master
+---------------------------------------
+Questions; 
+Each customer How many orders present over time.
+query 1) customer - Over time -count (orders) - value of orders
+
+
+
+Query 2) From Each Office location Number of orders over time with order status.
+
+office, year, month , orders_quantity , group by status 
+--------------------
+Query 2 solution:::
+
+
+
+
+
+

@@ -1,0 +1,980 @@
+10
+println(res0)
+"hi"
+var i=10
+var i:Int=10
+var s="welcome"
+var t=True
+var t=TRUE
+var t=true
+println(i)
+i.getClass
+i=100
+i="hi"
+var i="hi"
+i="welcome"
+i=10
+val j=10
+j=100
+val j=100
+var a=10
+var b=100
+lazy val c=a+b
+a=20
+println(c)
+a=30
+println(c)
+var a=10
+var b=100
+lazy val c=a+b
+a=20
+a=30
+println(c)
+a=40
+println(c)
+val x:Int=10
+val s="hi welcome to class.,  sample tet ,,"
+s.length
+s.split(" ")
+s.split(" ").length
+s.split(" ")
+res12.length
+val a=s.split(" ")
+a.length
+println(a.length)
+println(a.length).getClass
+val x=println(a.length)
+println(s.split(" ").length)
+s.split(" ").length
+s.split(" ")
+val a=s.split(" ")
+a
+for x <- a println(x)
+for ( x <- a )println(x)
+for ( x <-  "hi welcome to class".rintln(x)
+:history
+10
+"hi"
+println(res0)
+True
+true
+:history
+ var i:Int=10
+var j=100
+j=2000
+j="hi"
+var name="xyz"
+name="abc"
+name=1000
+var name=1000
+name.getClass
+var name1="aaaa"
+name1.getClass
+val i=100
+i=200
+var j=100
+j=300
+var i=0
+var j=10
+lazy val k=i+j
+i=20
+i=30
+println(k)
+i=40
+println(k)
+val x:Boolean=true
+val y=false
+y=10
+var y=100
+y=false
+:history
+val t=(1,"stu1",100.50)
+t._1
+println(t._2)
+println(t._3)
+t.invert
+val t=(1,"stu1")
+t.swap
+t.zipped
+val t1=t.copy
+t.copy(t1)
+t.productArity
+t.productIterator
+for(a <- t.productIterator) println(a)
+val t=(1,"stu1",100.50,1,2,3,4,5,List(10,20))
+for(a <- t.productIterator)println(a)
+val r=1 to 10
+val r=1 to 10 by 3
+for (a <- (1 to 10))println(a)
+for (a <- (1 to 10))println("hi***")
+for (a <- (1 to 10))println("hi***::"+a)
+for (a <- (1 to 10 by 2))println("hi***::"+a)
+(1 to 10)(0)
+(1 to 10)(6)
+"hi welcome to class"
+"hi welcome to class".capitalize
+"hi welcome to class".charAt(3)
+"hi welcome to class"(4)
+val s="hi welcome to class"
+s.concat(s)
+s.concat("xxxxx")
+s+"xxxx"
+"hi welcome".equals("Hi Welcome")
+"hi welcome".equalsIgnoreCase("Hi Welcome")
+"hi welcome"=="hi welcome"
+t="hi welcome"
+val t="hi welcome"
+val t1="hi welcome"
+t1==t
+t.indexOf("o")
+t.indexOf("e")
+t.lastIndexOf("e")
+t.indexOf("e")
+t
+t.split(" ")
+t.splitAt(4)
+t.substring(3,5)
+t.substring(2,6)
+"indiana jones (1200) released in (2020)"
+val t="indiana jones (1200) released in (2020)"
+t.lastIndexOf("(")
+t.lastIndexOf(")")
+t.substring(33,38)
+t.substring(33+1,38)
+t.substring(t.lastIndexOf("(")+1,t.lastIndexOf(")"))
+t.substring(t.lastIndexOf("(")+1,t.lastIndexOf(")"))val t="indiana jones (1200) released in (2020)"
+t.substring(t.lastIndexOf("(")+1,t.lastIndexOf(")")
+)
+println("hi welcome"+ t )
+println("hi welcome"+ " " +t )
+println("hi welcome"+ " " + 100000)
+for(x<- t)println(x)
+val a=Array(10,20,30)
+val a=Array(10,true)
+val a=Array(10,"hi")
+val a=Array("abc","hi")
+a(0)
+a(0)="def"
+a
+a.getClass
+val v=Vector(10,20)
+v(0)
+v(0)=20
+val v=Array(10,20)
+v(0)=20
+v
+val s=Set(10,101,1000,10,10,10,10)
+for(a<-s)println(a)
+val a=Array(10,10,10,10,200,200,200)
+a.toSet
+a.toSet.toArray
+val m=Map("m"->10,"s"->20)
+m(s)
+m[s]
+val m=Map("m"->10,"s"->20)
+m("s")
+m("m")
+m("l")
+m.key
+m.keys
+for(a<-m.keys)println(m(a))
+val m=Map("m"->10,"s"->20)
+m("m")
+m("l")
+:history
+{
+val x=10
+val y=20
+println("sum of x and y"+ x+y)
+x+y
+}
+val x={
+val x=10
+val y=20
+println("sum of x and y"+ x+y)
+x+y
+}
+println(x)
+println(x).getClass
+val x={
+val x=10
+val y=20
+println("sum of x and y:"+ (x+y))
+}
+(x:Int,y:Int)=>{
+println("sum of x and y:"+ (x+y))
+x+y
+}
+val fn= (x:Int,y:Int)=>{
+println("sum of x and y:"+ (x+y))
+x+y
+}
+def fn_method(x:Int,y:Int)={
+println("sum of x and y:"+ (x+y))
+x+y
+}
+fn(10,200
+)
+fn_methd(10,200)
+fn_method(10,200)
+val sum= (x:Int,y:Int)=>{
+println("sum of x and y:"+ (x+y))
+x+y
+}
+val sub= (x:Int,y:Int)=>{
+println("sub of x and y:"+ (x-y))
+x-y
+}
+val mul= (x:Int,y:Int)=>{
+println("mul of x and y:"+ (x*y))
+x*y
+}
+sum(10,20)
+sub(10,20)
+mul(10,20)
+def operation(a:Int, b:Int, fn:(Int,Int)=>Int)={
+prointln("Inside Operation method")
+fn(a,b)
+}
+def operation(a:Int, b:Int, fn:(Int,Int)=>Int)={
+println("Inside Operation method")
+fn(a,b)
+}
+operation (10+20,20,sum)
+sum
+def sum_method(x:Int,y:Int)={
+println("SUM METHOD of x and y:"+ (x+y))
+x+y
+}
+operation(sum_method(10,20),30,sum)
+operation (10+20,20,sub)
+operation (10+20,20,mul)
+oepration
+operation
+sum
+operation(10,20,sum)
+sum(10,20)
+sum
+operation(10,20, (x,y)=> x%y)
+def operation(a:Int, b:Int, fn:(Int,Int)=>Int)={
+println("Inside Operation method")
+fn(a,b)
+}
+operation(10,20,(x,y)=>x+y+10)
+operation(10,20,(x,y)=>{x+y+10})
+val l=List(10,20,30,40)
+val l= (1 to 10).toList
+val l= 10::20::30::Nil
+val l= (1 to 10).toList
+l
+for(x <- l) println(x)
+l.foreach(x=>println(x))
+(x:Int)=>println(x)
+val f=(x:Int)=>println(x)
+l.foreach(f)
+l.foreach(x=>println(x))
+val f=(x:Int)=>println(x)
+l.foreach(println)
+val s=List("stu1","stu2","stu3")
+s.foreach(println)
+s.foreach(x=>println(x))
+s.foreach((x:String)=>{println(x)})
+l
+l.foreach(x=>println(x+10))
+val y=l.foreach(x=>println(x+10))
+val y=l.map(x=>x+10)
+val y=l.map(x=>x+"10")
+val y=l.map(x=>x+":::10")
+val y=l.map(x=>x+10)
+val z=l.foreach(x=>println(x+10))
+val empRDD=spark.sparkContext.textFile("emp")
+empRDD.foreach(println)
+val empRDD=spark.sparkContext.textFile("emp").filter(line=>!line.contains("empid"))
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>!x.contains("empid"))
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>x.contains("empname"))
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>!(x.contains("empname")))
+val empRDD=spark.sparkContext.textFile("emp").filterNot(x=>x.contains("empname"))
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>if x.contains("empname") true else flase)
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>if x.contains("empname") true else false)
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>if( x.contains("empname")) true else false)
+empRDD.foreach(println)
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>if( x.contains("empname")) false else false)
+empRDD.foreach(println)
+val empRDD=spark.sparkContext.textFile("emp").filter(x=>if( x.contains("empname")) false else true)
+empRDD.foreach(println)
+empRDD.map(line=>(line.split(0),line.split(1),line.split(2),line.split(3)).foreach(println)
+)
+empRDD.map(line=>(line.split(0),line.split(1),line.split(2),line.split(3))).foreach(println)
+empRDD.map(line=>(line.split(",")(0),line.split(",")(1),line.split(",")(2),line.split(",")(3))).foreach(println)
+val emp=empRDD.map(line=>(line.split(",")(0),line.split(",")(1),line.split(",")(2),line.split(",")(3)))
+emp.foreach(println)
+emp
+val empDF=emp.toDF("empid","empname","sal","dept")
+spark.catalog.listTables
+spark.catalog.listTables.show
+val empDF=emp.toDF("empid","empname","sal","dept")
+spark.catalog.listTables.show
+empDF.printSchema
+empDF.show
+empDF.write.json("empOut")
+empDF.write.save("empOut1")
+:history
+val l=(1 to 10).toList
+val l1=List(10,100,20,30,50,15,110,1000)
+val l2=10::100::Nil
+val stu=List((1,"stu1",100.50,"M"),
+(2,"stu2",100.50,"M"),
+(3,"stu3",100.50,"F")
+(4,"stu4",100.50,"M")
+(5,"stu5",100.50,"F")
+(6,"stu6",100.50),"M")
+val stu=List((1,"stu1",100.50,"M"),
+(2,"stu2",50.50,"M"),
+(3,"stu3",400.50,"F"),
+(4,"stu4",500.50,"M"),
+(5,"stu5",1000.50,"F"),
+(6,"stu6",130.50,"M"))
+val l=(1 to 10).toList
+val l1=List(10,100,20,30,50,15,110,1000)
+val stu=List((1,"stu1",100.50,"M"),
+(2,"stu2",50.50,"M"),
+(3,"stu3",400.50,"F"),
+(4,"stu4",500.50,"M"),
+(5,"stu5",1000.50,"F"),
+(6,"stu6",130.50,"M"))
+l(0)
+l(1)
+for(a <- l) println(a)
+l.foreach(x=>println(x))
+l.foreach(println)
+val x=l.foreach(println)
+l.++(l)
+l.++:(l)
+l.+(1000)
+l.+:(1000)
+l::(1000)
+l.::(1000)
+l.:::(l)
+val a= StringBuilder(0
+val a= StringBuilder()
+val a= new StringBuilder()
+l.addString(a)
+l.addString(a,"+")
+val a= new StringBuilder()
+l.addString(a,"+")
+l(5)
+l.apply(5)
+l1
+l1.contains(20)
+ val res=l1.contains(31)
+l1
+val a=Array(0
+val a=Array()
+l1.copyToArray(a,1,3)
+val a=Array(0)
+l1.copyToArray(a,1,3)
+a
+val a=new Array[Int](10)
+l1.copyToArray(a,1,3)
+a
+l1
+ val a=new Array[Int](10)
+l1.copyToArray(a,1,3)
+ val a=new Array[Int](10)
+l
+l.size
+l.count(x=>x%2!=0)
+11%2!=0
+l1
+stu
+stu.count(x=>x._4=="M")
+stu.count(x=>x._4!="M")
+l
+add 10 to every element , i want a new List 
+val abc=l.foreach(x=>println(x+10))
+abc
+abc.getClass
+l.map(x=>x+10)
+l.map(x=>x+"10")
+l.map(x=>(x,10))
+l.map(x=>(x,1))
+l
+l.map(x=> if(x%2==0) x)
+l.filter(x=>x%2==0)
+stu
+stu.filter(x=>x._4=="F")
+stu.filter(x=>x._4=="F").map(x=>(x._2,x_4))
+stu.filter(x=>x._4=="F").map(x=>(x._2,x._4))
+stu.count(x=>x._4=="F").map(x=>(x._2,x_4))
+stu.count(x=>x._4=="F").map(x=>(x._2,x._4))
+stu.filter(x=>x._4=="F").map(x=>(x._2,x._4))
+val (el,ol)=l.partition(x=>x%2==0)
+val lines=List("hi welcome to clas","welcome to Scala")
+lines.map(x=>x.split(" "))
+lines.map(x=>x.split(" ")).flatten()
+lines.map(x=>x.split(" ")).flatten
+lines.map(x=>x.split(" "))
+lines.flatMap(x=>x.split(" "))
+l1
+l
+l.reduceLeft((x,y)=>x+y)
+l1
+l1.reduceLeft((x,y)=>if( x>y) x else y)
+l1.reduceLeft((x,y)=>if( x<y) x else y)
+l1.reduceRight((x,y)=>if( x<y) x else y)
+l1.reduce((x,y)=>if( x<y) x else y)
+l.reduce((x,y)=>x+y)
+l.scanLeft(10)((x,y)=>x+y)
+l
+l.foldLeft(10)((x,y)=>x+y)
+l.reverse
+l1
+l1.zipWithIndex
+res72.unzip
+l1
+l1.head
+l1.tail
+  
+;
+sc
+spark
+sc
+spark
+sc.textFile("input/sample.txt")
+val input=sc.textFile("input/sample.txt")
+input.collect
+input
+input.count
+input.foreach(println)
+input.distinct
+input.distinct.count
+input.getNumPartitions
+input.map(line => line.split(" "))
+input.map(line => line.split(" ")).foreach(println)
+input.map(line => line.split(" ")).collect
+input.flatMap(line => line.split(" ")).collect
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).collect
+input.flatMap(line => line.split(" ")).map(word=>(word,1))
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).collect
+input.foreach)println)
+input.foreach(println)
+input.flatMap(line => line.split(" ")).commect
+input.flatMap(line => line.split(" ")).collect
+input.flatMap(line => line.split(" ")).groupBy()
+input.flatMap(line => line.split(" ")).groupBy(x=>x)
+input.flatMap(line => line.split(" ")).groupBy(x=>x).collect
+input.flatMap(line => line.split(" ")).groupBy(x=>x).map(x=>(x._1,x._2.size))
+input.flatMap(line => line.split(" ")).groupBy(x=>x).map(x=>(x._1,x._2.size)).collect
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).collect
+val input=sc.textFile("input/sampl1.txt")
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).collect
+input.flatMap(line => line.split(" ")).groupBy(x=>x).map(x=>(x._1,x._2.size)).collect
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).collect
+input.flatMap(line => line.split(" ")).groupBy(x=>x).collect
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).saveAsTextFile("input/wcout")
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).saveAsSequeceFile("input/wcout")
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).saveAsSequenceFile("input/wcout")
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y).saveAsSequenceFile("input/wcout_seq")
+input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y)
+val wc=input.flatMap(line => line.split(" ")).map(word=>(word,1)).reduceByKey((x,y)=>x+y)
+wc.foreach(println)
+val orderdetails_df= spark.read.format("jdbc")
+.option("url", "jdbc:mysql://localhost:3306/classicmodels")
+.option("driver", "com.mysql.jdbc.Driver")
+.option("dbtable", "orderdetails")
+.option("user", "root")
+.option("password", "root")
+.load()
+spark-shell --jars /home/dorababugjntup/YARN/hive/lib/mysql-connector-java-8.0.11.jar
+val orderdetails_df= spark.read.format("jdbc").
+option("url", "jdbc:mysql://localhost:3306/classicmodels").
+option("driver", "com.mysql.jdbc.Driver").
+option("dbtable", "orderdetails").
+option("user", "root").
+option("password", "root").
+load()
+orderdetails_df:.show
+orderdetails_df.show
+val orderline_rdd=spark.sparkContext.textFile;
+val orderline_rdd=spark.read.textFile("/classicmodels/orderdetails")
+orderline_rdd.first
+orderline_rdd.count
+val orderline_rdd=spark.sparkContext.textFile("/classicmodels/orderdetails")
+orderline_rdd.count
+orderline_rdd.first
+orderline_rdd.take(10)
+orderline_rdd.map(line=>line.replace("\"","").first
+orderline_rdd.map(line=>line.replace("\"","")).first
+sc
+sc.textFile("orderdetails")
+sc.textFile("orderdetails").first
+sc.textFile("orderdetails").map(line=>line.replace("\"")).first
+sc.textFile("orderdetails").map(line=>line.replace("\"","")).first
+sc.textFile("orderdetails").map(line=>line.replace("\"","")).map(line=>(line.split(",")(0), line.split(",")(2)*line.split(",")(3))
+.first
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2)*line.split(",")(3))).
+first
+"100".toInt
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toInt)).
+first
+ "1300.00".toFloat
+ "1300.00".toInt
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat)).
+first;
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+orderdetailsRDD.first
+orderdetailsRDD.count
+orderdetailsRDD.toDebugString
+orderdetailsRDD
+orderdetailsRDD.filter(line => line._2 >10000).foreach(println)
+orderdetailsRDD.groupByKey().first
+orderdetailsRDD.groupByKey().show
+orderdetailsRDD.groupByKey().take(10).foreach(println)
+orderdetailsRDD.reduceByKey((x,y)=>x+y).first
+orderdetailsRDD.reduceByKey((x,y)=>x+y,1).saveAsTextFile("ol_res")
+orderdetailsRDD.reduceByKey((x,y)=>x+y).repartition(1).count
+val part2=sc.textFile("orders").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(7)))
+part2.first
+val part2=sc.textFile("orders").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(6)))
+part2.first
+part1
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+case class orderdetails(ordernumber String,amount Float)
+case class orderdetails(ordernumber:String,amount:Float)
+part1.map(line => orderdetails(line._1,line._2))
+part1.map(line => orderdetails(line._1,line._2)).foreach(x=>println(x.amount))
+part1.map(line => orderdetails(line._1,line._2)).foreach(x=>println(x.ordernumber))
+part1.map(line => orderdetails(line._1,line._2))
+part1
+val part2=sc.textFile("orders").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(6)))
+;
+part2.join(part1) .first
+part2.join(part1)
+part2.join(part1).filter(x=>x._2._1=128).foreach(println)
+part2.join(part1).filter(x=>x._2._1==128).foreach(println)
+part2.join(part1).filter(x=>(x._2._1=="128")).foreach(println)
+part2.join(part1).first
+part2.join(part1).map(x=>(x._2._1,(x._1,x._2_2)).first
+)
+part2.join(part1).map(x=>(x._2._1,(x._1,x._2._2))).first
+part2.join(part1).map(x=>(x._2._1,x._2._2)).first
+part2.join(part1).map(x=>(x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).FIRST
+part2.join(part1).map(x=>(x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).first
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1="201")
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).foreach(println)
+val part2=sc.textFile("orders").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(6)))
+part2.foreach(println)
+sc.textFile("orders").foreach(println)
+   
+sc.textFile("orders").foreach(x=>println(x.reverse))
+sc.textFile("orders").foreach(x=>println(x.reverse.split(",").reverse))
+sc.textFile("orders").foreach(x=>println(x.reverse.split(",")(0).reverse))
+sc.textFile("orders").foreach(x=>println(x.reverse.split(",")(0).reverse.toInt))
+sc.textFile("orders").foreach(x=>println(x.reverse.split(",")(0).reverse.replace("\"",""))
+)
+sc.textFile("orders").foreach(x=>{val y=x.replace("\"",""); println((y.split(",")(0),y.reverse.split(",")(0).reverse)))
+sc.textFile("orders").foreach(x=>{val y=x.replace("\"",""); println((y.split(",")(0),y.reverse.split(",")(0).reverse))})
+sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+val part2=sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1="201")
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201")
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+orderdetailsRDD.reduceByKey((x,y)=>x+y,1).saveAsTextFile("ol_res")
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+val part2=sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).saveAsTextFile("q1_out")
+val l= (1 to 10).toList
+l.::(1000)
+l.:::(1000)
+l.:::List(1000,1001)
+l.+:(1000)
+l.::(1000)
+l.++:(1000)
+l.++:l
+l.++:(l)
+l.+:(1000)
+l.:::(l)
+l.++:(l)
+sc.textFile("cusotmer").map(line => (line.split(",")(0),line.split(",")(1))).first
+sc.textFile("customer").map(line => (line.split(",")(0),line.split(",")(1))).first
+sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))).first
+sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1)))}.first
+sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))}.first
+sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))}).first
+sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))}).foreach(println)
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+orderdetalsRDD.first
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+part1.foreach)println)
+part1.foreach(println)
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+part1.first
+orderdetailsRDD.first
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+//orderdetailsRDD.reduceByKey((x,y)=>x+y,1).saveAsTextFile("ol_res")
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+val part2=sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+part3.first
+customerRDD
+val customerRDD=sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+ val customerRDD=sc.textFile("customer").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+customerRDD
+val part3.join(customerRDD).first
+part3.join(customerRDD).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1)).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1)).foreach(println)
+val part3.join(customerRDD).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1)).saveAsTextFile("customer_order_amount")
+sc.textFile("~/ip/orderdetails").first
+sc.textFile("$HOME/ip/orderdetails").first
+sc.textFile("orderdetails").first
+sc.textFile("~/ip/orderdetails").
+map(line=>line.replace("\"","")).first
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).first
+sc.textFile("orderdetails").first
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat)).first
+sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat)).take(10)
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+ orderdetailsRDD.reduceByKey((x,y)=>x+y).take(10))
+ orderdetailsRDD.reduceByKey((x,y)=>x+y).take(10)
+ orderdetailsRDD.reduceByKey((x,y)=>x+y).filter(x=>x._1 == 10110).first
+ orderdetailsRDD.reduceByKey((x,y)=>x+y).filter(x=>x._1 == "10110").first
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+case class ordervalue(odernumber:String,amount:Float)
+orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+orderdetailsRDD.reduceByKey((x,y)=>x+y,1).map(x=>ordervalue(x._1,x._2))
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1).map(x=>ordervalue(x._1,x._2))
+part1.map(x=>x.odernumber).first
+sc.textFile("orders").first
+sc.textFile("orders").foreach(println)
+sc.textFile("orders").map(x=>(x.split(",")(0)x.split(",")(6)).foreach(println)
+sc.textFile("orders").map(x=>(x.split(",")(0),x.split(",")(6))).foreach(println)
+sc.textFile("orders").map(x=>(x.split(",")(0),x.split("\",\"")(6))).foreach(println)
+sc.textFile("orders").foreach(println)
+"10262","2004-06-24","2004-07-01","null","Cancelled","This customer found a better offer from one of our competitors. Will call back to renegotiate.","141"
+"10262","2004-06-24","2004-07-01","null","Cancelled","This customer found a better offer from one of our competitors. Will call back to renegotiate.","141".reverse
+""" "10262","2004-06-24","2004-07-01","null","Cancelled","This customer found a better offer from one of our competitors. Will call back to renegotiate.","141" """
+res19.reverse
+res19.reverse.split(",")(0)
+res19.reverse.split(",")(0).reverse
+val part2=sc.textFile("orders").map(x=>{val y=x.replace("\"",""); (y.split(",")(0),y.reverse.split(",")(0).reverse)})
+part2.first
+part2.join(part1).take(10)
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)  
+part2.join(part1).take(10)
+part2.join(part1).sort(x=>x._2._2)take(10)
+part2.join(part1).sort(x=>x._2._2).take(10)
+part2.join(part1).sortBy(x=>x._2._2).take(10)
+part2.join(part1).sortBy(x=>x._2._1).take(10)
+part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y).filter(x=>x._1=="201").foreach(println)
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+part3.join(customerRDD).first
+val customerRDD=sc.textFile("customers").map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+customerRDD.first
+part3.join(customerRDD).first
+part3.join(customerRDD).map(line => (line._1,line._2._2, line._2._1)).saveAsTextFile("customer_order_amount")
+val orderdetailsRDD=sc.textFile("~/ip/orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+val part2=sc.textFile("orders").
+map(x=>{val y=x.replace("\"",""); 
+(y.split(",")(0),y.reverse.split(",")(0).reverse)
+   })
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+val customerRDD=sc.textFile("customer").
+map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+ 
+val part4=part3.join(customerRDD).
+map(line => (line._1,line._2._2, line._2._1))
+val orderdetailsRDD=sc.textFile("orderdetails").
+map(line=>line.replace("\"","")).
+map(line=>(line.split(",")(0), line.split(",")(2).toInt*line.split(",")(3).toFloat))
+val part1=orderdetailsRDD.reduceByKey((x,y)=>x+y,1)
+val part2=sc.textFile("orders").
+map(x=>{val y=x.replace("\"",""); 
+(y.split(",")(0),y.reverse.split(",")(0).reverse)
+   })
+val part3=part2.join(part1).map(x=> (x._2._1,x._2._2)).reduceByKey((x,y)=>x+y)
+val customerRDD=sc.textFile("customers").
+map(line =>{ val line1=line.replace("\"",""); (line1.split(",")(0),line1.split(",")(1))})
+ 
+val part4=part3.join(customerRDD).
+map(line => (line._1,line._2._2, line._2._1))
+part4.saveAsTextFile("customer_order_amount1")
+part4.toDebugStringb
+part4.toDebugString
+println(res4)
+val a=Array(10,20)
+a(0)=100
+a
+a=Array(10,20)
+var l =List(100,200)
+l(0)=100
+l.getClass
+a.getClass
+va l = List (10,10,10,10,100,100,20,20,20,30)
+val l = List (10,10,10,10,100,100,20,20,20,30)
+l.distinct
+l.toSet.toList
+ val s=Set(10,10,10,10,10,10)
+val s= SortedSet(10,20,99,1,5,2,10)
+val s= Sortedset
+val s= SortedSet(10,20,99,1,5,2,10)
+val s= scala.collection.SortedSet(10,20,99,1,5,2,10)
+val t=("abc","def")
+val t=("abc","def",100)
+val t=("abc","def",100,10.4)
+t._2
+val t=("abc","def",100,10.4,"xyz","xys))
+val t=("abc","def",100,10.4,"xyz","xys"))
+val t=("abc","def",100,10.4,"xyz","xys")
+val t1=(10,20)
+t1.swap
+val t=("abc","def",100,10.4,"xyz","xys")
+for(a <- t.productIterator) println(a)
+val r=1 to 10
+val r=1 to 10 by 2
+for( a <- 1 to 10) println("test");
+val m=Map(1 -> "stu1", 2-> "stu2))
+val m=Map(1 -> "stu1", 2-> "stu2")
+m(2)
+val m=Map(1 -> "stu1", 2-> "stu2","x" -> "stu3")
+m("x")
+m.keys
+val m=Map(1 -> "stu1", 2-> "stu2",3 -> "stu3",4->"stu4")
+m.kjeys
+m.keys
+for(a<-k.keys) prinltn(m(a))
+for(a<-m.keys) prinltn(m(a))
+for(a<-m.keys) println(m(a))
+val l= (1 to 10) .toList
+val l=1::2::3::Nil
+val l=List(10,20)
+val l= 1 to 10 
+val stu=List(("stu1","m",100),("stu1","f",100),("stu3","m",100),("stu4","f",100),("stu5","m",100))
+val l=( 1 to 10 ).toList
+stu
+l(3)
+stu(1)
+stu(1)._2
+stu(1)
+stu(1)._2
+l
+l.++(l)
+l.++:(l)
+l.+:(l)
+l.+:(10000000000000000)
+l.+:(100000)
+l.+:(l)
+l.addString
+val b=new StringBuilder()
+l.addString(b)
+b
+l.addString(b,"+")
+l(5)
+l.apply(5)
+l.count
+l.foreach(x=>println(x))
+l.foreach(println)
+stu.foreach(x=>println(x)
+)\
+stu.foreach(x=>println(x))
+stu.foreach(x=>println(x)._1)
+stu.foreach(x=>println(x._1))
+val abc=stu.foreach(x=>println(x)._1)
+val abc=stu.foreach(x=>println(x._1)
+)
+abc
+val abc=stu.foreach(x=>println(x._1)
+)
+l
+l.foreach(x=>println(x+10))
+val abc=l.foreach(x=>println(x+10))
+l.map(x=>x+10)
+l.map(x=>x+"10")
+stu
+for( x <- stu) yield (x._1,x._2)
+for( x <- stu) yield (x._1,x._3)
+stu.map(x=>(x._1,x._3))
+val fn=(x)=>{ println(x); (x._1,x._3)}
+val fn=(x:(String,String,Int))=>{ println(x); (x._1,x._3)}
+fn
+stu.map(fn)
+for( x <- stu) yield (x._1,x._3)
+for( x <- stu) {println(x);yield (x._1,x._3))
+for( x <- stu) {println(x)} yield (x._1,x._3)
+for( x <- stu) {println(x)}; yield (x._1,x._3)
+for( x <- stu) {println(x); yield (x._1,x._3)}
+for( x <- stu) yield (x._1,x._3){println(x)}
+for( x <- stu) yield (x._1,x._3)
+stu.map(fn)
+stu.map(x=>(x._1,x._3))
+stu
+case class student(name:String,gender:String,Fee:Float)
+val s1=Student("test","M",100.0)
+val s1=student("test","M",100.0)
+val s1=student("test","M",100.0f)
+s1
+s1.name
+s1.name="test1"
+stu
+stu.map(x=> student(x._1,x._2,x._3))
+val stu1=stu.map(x=> student(x._1,x._2,x._3))
+stu1.map(x=>(x.name,x.fee))
+stu1.map(x=>(x.name,x.Fee))
+:hitory
+:history
+s1
+val s2=s1.copy(name="test1")
+stu
+stu.filter(x=> x._2=="m")
+stu.filterNot(x=> x._2=="m")
+stu.partition(x=>x._2=="m")
+(ml,fl)=stu.partition(x=>x._2=="m")
+val (ml,fl)=stu.partition(x=>x._2=="m")
+ms
+ml
+fl
+l
+l.sum
+stu
+l.reduceLeft((x,y)=>x+y)
+l.reduceLeft((x,y)=>{println(x+"----"+y); x+y)
+l.reduceLeft((x,y)=>{println(x+"----"+y); x+y}
+)
+l.reduceRight((x,y)=>{println(x+"----"+y); x+y})
+l.reduce((x,y)=>{println(x+"----"+y); x+y})
+l.scanLeft((x,y)=>{println(x+"----"+y); x+y})
+l.scanLeft(10)((x,y)=>{println(x+"----"+y); x+y})
+stu
+val l1=List(10,200,300,4,500,2,99)
+l1.reduceLeft((x,y)=> if x>y x)
+l1.reduceLeft((x,y)=> if x>y x))
+l1.reduceLeft((x,y)=> if (x>y) x)
+l1.reduceLeft((x,y)=> if (x>y) x else y)
+l1.reduceLeft((x,y)=>{println(x+"----"+y; if (x>y) x else y)}
+l1.reduceLeft((x,y)=>{println(x+"----"+y; if (x>y) x else y})
+l1.reduceLeft((x,y)=>{println(x+"----"+y); if (x>y) x else y})
+l1.reduceLeft((x,y)=>{println(x+"----"+y); if (x<y) x else y})
+:history
+stu
+val stu1= List((stu1,m,100), (stu1,f,100), (stu3,m,100), (stu4,f,100), (stu5,m,100))
+val stu1= List(("stu1","m",100), ("stu1","f",1000), ("stu3","m",500), ("stu4","f",50), ("stu5","m",120))
+stu1.sortBy(x=>x._3)
+stu1.sortBy(x=>x._3,scala.math.Ordering.Int.reversed)
+stu1.sortBy(x=>x._3)(scala.math.Ordering.Int.reversed)
+stu1.sortBy(x=>x._3)(reverse)
+stu1.sortBy(x=>x._3).reverse)
+stu1.sortBy(x=>x._3).reverse
+stu1.sortBy(x=>x._3,scala.math.Ordering.Int.reverse)
+stu1.sortBy(x=>x._3)(scala.math.Ordering.Int.reverse)
+stu1.sortBy(x=>x._3).reverse
+stu1.sortWith((x,y)=>x._3>y._3)
+stu1.sortWith((x,y)=>x._3<y._3)
+stu1.sorted
+stu1.sorted.reverse
+l
+l.sorted.reverse
+stu1
+stu1.groupBy(x=>x._2)
+stu1.groupBy(x=>x._2)("f")
+stu1.groupBy(x=>x._2)("m")
+l
+l.zipWithIndex
+l1
+l1.zipWithIndex
+res113.unzip
+l.mkString
+l.mkString("+")
+l1
+l1.zip(List("A","B","c","d","e","f","g"))
+val l2=List("hi welcome","test data abc")
+l2.map(line=>line.split(" "))
+l2.map(line=>line.split(" ")).flatten
+l2.flatMap(line=>line.split(" "))
+l2.foreach(println)
+l2.flatMap(line=>line.split(" ")).foreach(println)
+Array(10,20).flatten
+List(Array(10,20)).flatten
+List(Array(10,20)).flatten.foreach(println)
+spark
+val OD_RDD=spark.sparkContext.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.read.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.sparkContext.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.read.textFile("/classicmodels/orderdetails")
+val OD_RDD=spark.sparkContext.textFile("/classicmodels/orderdetails")
+OD_RDD.first
+OD_RDD.map(line => {val line1=line.replace("\"","");(line1.split(",")(0),line1.split(",")(2).toInt * line1.split(",")(3).toFloat))}
+OD_RDD.map(line => {val line1=line.replace("\"","");(line1.split(",")(0),line1.split(",")(2).toInt * line1.split(",")(3).toFloat)}
+)
+OD_RDD.map(line => {val line1=line.replace("\"","");(line1.split(",")(0),line1.split(",")(2).toInt * line1.split(",")(3).toFloat)}).first
+val OrderDet=OD_RDD.map(line => {val line1=line.replace("\"","");(line1.split(",")(0),line1.split(",")(2).toInt * line1.split(",")(3).toFloat)})
+OrderDet.toDF(ordernumber,amount)
+OrderDet.toDF("orderno","amount")
+OrderDet
+case class order(orderno String,amount Float)
+case class order(orderno:String,amount:Float)
+OrderDet.map(x=> order(x._1,x._2))
+OrderDet.map(x=> order(x._1,x._2)).toDS()
+spark.read.format("csv")
+spark.read.format("csv").option("sep",",").option("quote","\"").option("header","false").load("/classicmodels/orderdetails")
+spark.read.format("csv").option("sep",",").option("quote","\"").option("header","false").load("/classicmodels/orderdetails").schema
+spark.read.format("csv").option("sep",",").option("quote","\"").option("header","false").load("/classicmodels/orderdetails").first
+val schema1=StructType(StructField("orderno","StringType",true), StructField("code","StringType",true), StructField("qty","StringType",true), StructField("priceeach","StringType",true), StructField("lineno","StringType",true))
+import org.apache.spark.sql.types.StructField
+import org.apache.spark.sql.types.StructType
+val schema1=StructType(StructField("orderno","StringType",true), StructField("code","StringType",true), StructField("qty","StringType",true), StructField("priceeach","StringType",true), StructField("lineno","StringType",true))
+val schema1=StructType(StructField("orderno","StringType","true"), StructField("code","StringType","true"), StructField("qty","StringType","true"), StructField("priceeach","StringType","true"), StructField("lineno","StringType","true"))
+import org.apache.spark.sql.types._
+val schema1=StructType(StructField("orderno","StringType","true"), StructField("code","StringType","true"), StructField("qty","StringType","true"), StructField("priceeach","StringType","true"), StructField("lineno","StringType","true"))
+StructType(StructField("orderno",StringType,true), StructField("code",StringType,true), StructField("qty",StringType,true), StructField("priceeach",StringType,true), StructField("lineno",StringType,true))
+StructType(Seq(StructField("orderno",StringType,true), StructField("code",StringType,true), StructField("qty",StringType,true), StructField("priceeach",StringType,true), StructField("lineno",StringType,true)))
+val schema1=StructType(Seq(StructField("orderno",StringType,true), StructField("code",StringType,true), StructField("qty",StringType,true), StructField("priceeach",StringType,true), StructField("lineno",StringType,true)))
+spark.read.format("csv").option("sep",",").option("quote","\"").option("header","false").load("/classicmodels/orderdetails")
+spark.read.format("csv").option("sep",",").option("quote","\"").option("header","false").schema(schema1).load("/classicmodels/orderdetails")
+spark.read.table("hdpdlake.orderdetails")
+spark.sql("select * from hdpdlake.orderdetails")
+spark.sql("select * from hdpdlake.orderdetails").cache()
+res18.count

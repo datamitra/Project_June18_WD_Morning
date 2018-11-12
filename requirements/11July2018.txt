@@ -1,0 +1,195 @@
+Import data into HDFS using Sqoop as CSV, also add property to enclose every field with double quotes.
+/CSV/ in hdfs 
+
+RDDs order details
+RDD for Order
+
+-------------
+Products.... 
+-------------
+read data into DataFrame directly from RDBMS.
+do the same for DataSet.
+-------------------
+Read data into DF from Hive tables
+
+Text and ORC -> 
+Text use CSV Serde:::::
+--------------------------------------------------------
+
+
+
+
+
+
+
+Completed tasks:
+Sqoop  Import into DataLake - Reusable Script
+
+Date 9/July/2018
+Reconciliation step to check Mysql and Hive count
+------------------------------
+104.196.40.14:3306
+roo 
+root
+hive Service -> hive --service hiveServer2
+Connect via 104.196.40.14:10000 using beeline(JDBC client). or Remote login into edge node and access hive using "hive"I thrift client)
+-------------------------------
+Today: Process Data using RDD,DF(DSL) , Spark SQL
+i) Check hive table data delimiters and File Format
+
+which git
+git clone https://github.com/datamitra/notes.git
+mv  project notes/
+git add *
+git commit -m "first commit"
+git push
+git rm -r to remove  a folder
+https://help.rallydev.com - provide requirement - user stories 
+Agile methodology -> Sprint ->Scrum calls, Scrum master
+---------------------------------------
+Questions; 
+Each customer How many orders present over time.
+query 1) customer - Over time -count (orders) - value of orders
+
+
+
+Query 2) From Each Office location Number of orders over time with order status.
+
+Question:: office, year, month , orders_quantity , group by status  and Sales made
+How much amount of sales each office made?
+--------------------
+Query 2 solution:::
+
+This query involves in orderdetails,orders,customers,employees,offices.
+
+
+i) number of orders quantity status wise 
+select orderNumber,quantityOrdered,priceEach from orderdetails;
+calculate the amoutn for every order number.
+select orderNumber,quantityOrdered,priceEach, 
+quantityOrdered*priceEach as totalAmount  from orderdetails;
+
+Observe that orderNumber and productid is the primary key. 
+So for a give order, group all the results.
+--------------------------------------------------
+Question:: office, year, month , orders_quantity , group by status  and total sales it made.
+
+table od
+Query::  quantityOrdered, sales for each orderNumber
+select orderNumber,  sum(quantityOrdered),sum(quantityOrdered*priceEach) as totalAmount   from orderdetails where orderNumber=10100 group by orderNumber;
+
+
+---------------------------------------------------
+From orders table:::
+ orderNumber, orderDate (year,month), status , customerNumber
+select orderNumber,orderDate,year(orderDate) yr,month(orderDate) month,customerNumber from orders;
+
+RDD, DF, DS, SQL -> 
+
+Each office and Sales amount:::
+--------------------
+table orders
+select orderNumber,customerNumber
+from orders;
+--------------------
+
+
+select orderNumber,  sum(quantityOrdered),sum(quantityOrdered*priceEach) as totalAmount   
+from orderdetails 
+where orderNumber=10100 group by orderNumber;
+
+
+
+
+select 
+count(O.orderNumber),
+C.customerNumber
+from orders O join customers  C on (C.customerNumber=O.customerNumber)
+group by O.customerNumber
+
+
+
+
+
+Date: 11 July 2018
+Task  is solve this using RDDs and DF DSL, use DS and SQL
+--------------------------------------------------------
+ sh startdaemons.sh
+ mysql -uroot -proot -e "show tables in classicmodels"
+customers,employees,offices,orderdetails,orders,payments,productlines, products
+sh sqoop_import_hive_table.sh products
+
+hive>select current_database();
+hive_count=`hive -S -e "select count(1) from hdpdlake.products"`
+mysql_count=`mysql -uroot -proot -e "select count(1) from classicmodels.products"`
+echo $hive_count  --- $mysql_count
+118 --- coun110t(1) 
+WHY ???
+
+Now orderdetails:::::
+sh sqoop_import_hive_table.sh orderdetails
+hive_count=`hive -S -e "select count(1) from hdpdlake.orderdetails"` 
+mysql_count=`mysql -uroot -proot -e "select count(1) from classicmodels.orderdetails" `
+echo $hive_count  --- $mysql_count
+2996 --- count(1) 2996
+hive -e "desc formatted hdpdlake.orderdetails" | grep -i location
+
+hdfs://localhost:9000/hdpdlake/orderdetails
+hdfs dfs -cat  hdfs://localhost:9000/hdpdlake/orderdetails/*
+
+hive>desc formatted products;
+Delmiter is controlA. 
+
+Create a table csv format and load data into csv ..
+show create table  hdpdlake.orderdetails;
+OK
+CREATE TABLE `hdpdlake.orderdetails`(
+  `ordernumber` int,
+  `productcode` string,
+  `quantityordered` int,
+  `priceeach` double,
+  `orderlinenumber` int)
+COMMENT 'Imported by sqoop on 2018/07/04 15:58:30'
+ROW FORMAT SERDE
+  'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'field.delim'='',
+  'line.delim'='\n',
+  'serialization.format'='')
+STORED AS INPUTFORMAT
+  'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:9000/hdpdlake/orderdetails'
+TBLPROPERTIES (
+  'transient_lastDdlTime'='1531274874')
+ 
+ CREATE TABLE `hdpdlake.orderdetails_csv`(
+  `ordernumber` int,
+  `productcode` string,
+  `quantityordered` int,
+  `priceeach` double,
+  `orderlinenumber` int)
+row format delimited fields terminated by ","
+stored as textfile;
+
+I want to have every field enclosed by double quotes, so that it can be consumed by external tools like informatica.
+
+CREATE TABLE hdpdlake.orderdetails_csv(a string, b string, ...)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+   "separatorChar" = "\t",
+   "quoteChar"     = "'",
+   "escapeChar"    = "\\"
+)  
+STORED AS TEXTFILE;
+DEFAULT_ESCAPE_CHARACTER \
+DEFAULT_QUOTE_CHARACTER  "
+DEFAULT_SEPARATOR        ,
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+username - root
+database name - classicmodels
+Table name passed is:: orderdetails
+Warning: /home/dorababugjntup/YARN/sqoop/../hbase does not exist! HBase imports will fail.
+Please set $HBASE_HOME to the root of your HBase installation.
+Warning: /home/dorababugjntup/YARN/sqoop/../hcatalog does not exist! HCatalog jobs will fail.
+Please set $HCAT_HOME to the root of your HCatalog installation.
+Warning: /home/dorababugjntup/YARN/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+Warning: /home/dorababugjntup/YARN/sqoop/../zookeeper does not exist! Accumulo imports will fail.
+Please set $ZOOKEEPER_HOME to the root of your Zookeeper installation.

@@ -1,0 +1,252 @@
+Spark Interview Questions:
+
+What is apache Spark - opensource Cluster computing framework used for large scale data processing. 100x faster compared to MR
+What are the distributed collections?  RDD,DF,DS 
+What is an RDD
+What is DF and DS
+Difference between DF and DS
+---------------
+Actions and Transformations
+Untyped vs Typed Transformations ( what distributed collections untyped transformatons return and  typed transformations return)
+-----------------
+How to run spark programs?
+
+What is Spark-sumbit utility
+
+WHen a spark job starts?  (Action)
+What is a stage and Task ? (wide transformaton , narrow transformation)
+
+when Exectors starts ? 
+
+Actions will send data to Driver -> 
+how to identify a method is action or transformation? -> Actions returns non distributed collections
+Transformations returns distributed collections.
+-----------------
+What is client mode and cluster mode
+
+Spark application flow when submit jobs to YARN ->
+
+Developer -> driver memory,cpu cores , exector mem,cpu for each exe, number of exec 
+----------------------
+Data Source :::
+Files  - unstructed , structed ->
+unstructed files -> log files, text data - these are human readable - (non humanreadable - Sequence file , Avro ) ( what is avro,avro serialization ) 
+Structured files -> csv,json, xml , (pure structured data sources - ORC, Parquet)
+
+RDBMS -> JDBC connectivity 
+
+Streams -> Kafka , Network ports , logfiles in real time 
+
+Read data from BigData sources (HDFS, HBASE, Cassandra , Hive Tables) using low level code(DF code , RDD code)  vs SQL 
+
+How to read text files using SCALA (not via Spark Libraries)
+
+----------------------------
+
+
+WHere you can hold this data  in Spark ??? Data Structures  (to hold unstructured and structured sources)
+inmemory Data structures - distributed collections 
+list array vs distributed data structures.
+
+What is an RDD -> 
+collection of objects (the objects can be string,int, or custom objects) 
+unlike non distributed collections list and map or set, which can be present in only one machine java heap memory, RDDs can be divided , stored and processed using multiple machines java heap space.
+
+------------------------------------
+How to choose partitions and no of execturos and memory for each exector, no of cpu cores for each exector
+CPU cores and Memory for Driver program- How to determine??
+------------------------------------
+
+RDD properties :::
+cache vs persist , Checkpoint  and how to set check point dir
+what are persist levels 
+----------------------------------------
+When to go for python based spark programming vs Scala based Spark ??? 
+WHich is better ?
+When to choose hadoop ecosystem and Spark Eco system 
+(from Architectural point - what you choose? combination or individual eco system -
+if you choose combination what is the cost??? 
+--------------------------------------
+RDDs
+what is lineage graph and how to see ? toDebugString
+
+How to see explain plan for SQL and DataFrame DSL? will there be any difference??
+
+-------------------------------------------
+
+Syntax for Spark-submit utility
+Spark Configuration in Source code vs Command line 
+Write Spark (scala or Java ) full fledged application
+
+How to choose various cluster managers while running spark applications.
+
+
+----------------------
+Cost of Transformations ? 
+Actions vs Transforamtions - Job stage task
+
+
+Explain word count Spark application witten in scala.
+what is Map transformation , what it does??
+FlatMap ?? 
+WHich is better (group by key or Reduce by key)
+what is pair RDD and PairRDD functions ?? 
+----------------------------------
+What is shuffle and Sort
+Combiner 
+Partitioner and Hash Partitioner
+
+When partitioner will be used??? 
+------------------------------------
+
+Integrate Spark with Hadoop 
+Integrate Spark with hive metastore
+Integrate Spark with Kafka and RDBMS
+------------------------------------
+
+Spark Streaming ( Spark 1.x vs Spark 2.x ) 
+Write basic programs in SCALA and JAVA.
+----------------------------------------
+Scala Language::::
+obejct
+class
+companion objects
+trait
+aiuxillary construcotrs
+functions and functional programming
+partially applied functions
+Closures
+
+Tail Recursion
+Inheritance
+
+File Reading using Scala .
+
+Programming Scala Book
+
+
+------------------------------------------------------------------------------------------------
+
+Thanks & Regards,
+Dorababu G
+dgangapa@cisco.com
+GSE-BIGDATA-OPS
+
+From: Dorababu Gangapatnam -X (dgangapa - COGNIZANT TECHNOLOGY SOLUTIONS US CORPORATION at Cisco) 
+Sent: Tuesday, July 10, 2018 9:51 AM
+To: Bhanuprakash Kn -X (bhakn - COGNIZANT TECHNOLOGY SOLUTIONS US CORPORATION at Cisco) <bhakn@cisco.com>
+Subject: Spark questions - July 10 2018
+
+Spark Interview Questions:
+
+What is apache Spark
+What are the distributed collections? 
+What is an RDD
+What is DF and DS
+Difference between DF and DS
+---------------
+Actions and Transformations
+Untyped vs Typed Transformations ( what distributed collections untyped transformatons return and  typed transformations return)
+-----------------
+How to run spark programs?
+
+What is Spark-sumbit utility
+
+WHen a spark job starts?  (Action)
+What is a stage and Task ? (wide transformaton , narrow transformation)
+
+when Exectors starts ? 
+
+Actions will send data to Driver -> 
+how to identify a method is action or transformation? -> Actions returns non distributed collections
+Transformations returns distributed collections.
+-----------------
+What is client mode and cluster mode
+
+Spark application flow when submit jobs to YARN ->
+
+Developer -> driver memory,cpu cores , exector mem,cpu for each exe, number of exec 
+----------------------
+Data Source :::
+Files  - unstructed , structed ->
+unstructed files -> log files, text data - these are human readable - (non humanreadable - Sequence file , Avro ) ( what is avro,avro serialization ) 
+Structured files -> csv,json, xml , (pure structured data sources - ORC, Parquet)
+
+RDBMS -> JDBC connectivity 
+
+Streams -> Kafka , Network ports , logfiles in real time 
+
+Read data from BigData sources (HDFS, HBASE, Cassandra , Hive Tables) using low level code(DF code , RDD code)  vs SQL 
+
+How to read text files using SCALA (not via Spark Libraries)
+
+----------------------------
+
+
+WHere you can hold this data  in Spark ??? Data Structures  (to hold unstructured and structured sources)
+inmemory Data structures - distributed collections 
+list array vs distributed data structures.
+
+What is an RDD -> 
+collection of objects (the objects can be string,int, or custom objects) 
+unlike non distributed collections list and map or set, which can be present in only one machine java heap memory, RDDs can be divided , stored and processed using multiple machines java heap space.
+
+------------------------------------
+How to choose partitions and no of execturos and memory for each exector, no of cpu cores for each exector
+CPU cores and Memory for Driver program- How to determine??
+------------------------------------
+
+RDD properties :::
+cache vs persist , Checkpoint  and how to set check point dir
+what are persist levels 
+----------------------------------------
+When to go for python based spark programming vs Scala based Spark ??? 
+WHich is better ?
+When to choose hadoop ecosystem and Spark Eco system 
+(from Architectural point - what you choose? combination or individual eco system -
+if you choose combination what is the cost??? 
+--------------------------------------
+RDDs
+what is lineage graph and how to see ? toDebugString
+
+How to see explain plan for SQL and DataFrame DSL? will there be any difference??
+
+-------------------------------------------
+
+Syntax for Spark-submit utility
+Spark Configuration in Source code vs Command line 
+Write Spark (scala or Java ) full fledged application
+
+How to choose various cluster managers while running spark applications.
+
+
+----------------------
+Date 14 July 2018 
+emphasis:::
+log file analysis 
+
+original table 
+1 10 2018-07-01
+2 10 2018-07-01
+3 10 2018-07-01
+4 10 2018-07-01
+
+
+incremental table
+1 10 2018-07-01
+1 20 2018-07-02
+1 30 2018-07-03
+4 40 2018-07-04
+
+i need origanl table as::::
+1 30 2018-07-03
+2 10 2018-07-01
+3 10 2018-07-01
+4 40 2018-07-04
+
+
+
+
+
+
+
