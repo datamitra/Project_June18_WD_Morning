@@ -37,11 +37,72 @@ res14: (Int, Float) = (10425,41623.44)
 2554  spark.read.table("hdp_datalake.orderdetails").first
 2555  spark.read.table("hdp_datalake.orderdetails").printSchema
 2556  spark.sql("select * from hdp_datalake.orderdetails").printSchema
-
+val orderDF=spark.read.table("hdp_datalake.orderdetails")
 orderDF.groupBy("ordernumber").agg(sum("priceeach")).first
 orderDF.groupBy("ordernumber").sum("priceeach").first
 
 orderDF.groupBy("ordernumber").agg(sum("priceeach")*sum("quantityordered")).where("ordernumber=10425").first
+
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach".alias("tot_price")).show
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").withColumnRenamed("quantityordered * priceeach","tot_price").printSchema
+
+--------------------------------------------
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").printSchema
+
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").where("ordernumber =10425 ").groupBy("ordernumber").sum("tot_price").show
+
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").where("ordernumber =10425 ").groupBy("ordernumber").sum("tot_price").show
+
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").where("ordernumber =10425 ").groupBy(col("ordernumber")).agg(sum("tot_price")).show
+
+
+------------------------
+orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").where("ordernumber =10425 ").groupBy(col("ordernumber")).agg(sum("tot_price").alias("tot_price")).select($"ordernumber",bround($"tot_price",2).alias("tot_price")).show
++-----------+---------+
+|ordernumber|tot_price|
++-----------+---------+
+|      10425| 41623.44|
++-----------+---------+
+
+------------------------
+val resDF=orderDF.select($"ordernumber",$"quantityordered"*$"priceeach").toDF("ordernumber","tot_price").where("ordernumber =10425 ").groupBy(col("ordernumber")).agg(sum("tot_price").alias("tot_price")).select($"ordernumber",bround($"tot_price",2).alias("tot_price"))
+
+
+resDF.select("*","'NA' as col1").show
+org.apache.spark.sql.AnalysisException: cannot resolve '`'NA' as col1`' given input columns: [ordernumber, tot_price];;
+
+resDF.withColumn("col1",lit("NA")).show
+resDF.withColumn("col1",expr("'NA'")).show
+
+
+HQL and SQL functions that can be used in SQL
+https://spark.apache.org/docs/2.3.0/api/sql/index.html
+
+DF functions::
+org.apache.spark.sql.functions.
+
+
+
+
+spark.read.table("hdp_datalake.orderdetails").printSchema
+spark.read.table("hdp_datalake.orderdetails").describe().show
+
+spark.catalog.setCurrentDatabase("hdp_datalake")
+spark.catalog.currentDatabase
+spark.catalog.listColumns("orderdetails").show
+
+
+scala> spark.read.table("hdp_datalake.orderdetails").createOrReplaceTempView("xyz")
+
+scala> spark.catalog.listTables.show
++------------+------------+--------------------+---------+-----------+
+|        name|    database|         description|tableType|isTemporary|
++------------+------------+--------------------+---------+-----------+
+|   customers|hdp_datalake|Imported by sqoop...|  MANAGED|      false|
+|orderdetails|hdp_datalake|Imported by sqoop...|  MANAGED|      false|
+|         xyz|        null|                null|TEMPORARY|       true|
++------------+------------+--------------------+---------+-----------+
+
 
 
 
